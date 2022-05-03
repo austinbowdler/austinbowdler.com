@@ -36,23 +36,23 @@ export default function Contact() {
                         marginHeight={0}
                         marginWidth={0}
                         style={{ filter: "opacity(0.7)" }}
-                        src="https://www.google.com/maps/embed/v1/place?q=97+warren+st+new+york+city&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12997.14244353189!2d-97.52433160930286!3d35.47247665896022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b2172fbf2b08f7%3A0xc5fb8825e7c57638!2sDowntown%20Oklahoma%20City%2C%20Oklahoma%20City%2C%20OK!5e0!3m2!1sen!2sus!4v1651581364414!5m2!1sen!2sus&key=AIzaSyC_fgyYyxPIpJjL2c-y0J0bbjCFPB41UYY"
                     />
                     <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">
-                        <div className="lg:w-1/2 px-6">
+                        <div className="lg:w-2/2 px-6">
                             <h2 className="title-font font-semibold text-white tracking-widest text-xs">
                                 ADDRESS
                             </h2>
                             <p className="mt-1">
-                                97 Warren St. <br />
-                                New York, NY 10007
+                                Oklahoma City, <br />
+                                Oklahoma
                             </p>
                         </div>
                         <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
                             <h2 className="title-font font-semibold text-white tracking-widest text-xs">
                                 EMAIL
                             </h2>
-                            <a className="text-indigo-400 leading-relaxed">
+                            <a href="#" className="text-indigo-400 leading-relaxed">
                                 abowdler2@gmail.com
                             </a>
                             <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">

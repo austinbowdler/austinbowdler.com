@@ -1,6 +1,20 @@
-export const skills = ["JavaScript", "React", "Vue.js", "C#", "ASP .NET Core", "SQL", "HTML", "CSS"];
+export const skills = ["JavaScript", "React", "Vue", "C#", "ASP .NET Core", "SQL", "Flutter", "Python"];
 
-export const testimonials = [];
+export const testimonials = [
+    {
+        name: "John Doe",
+        company: "Big Company",
+        quote: "I am so happy with the result!",
+        image: "https://source.unsplash.com/random/100x100",
+    },
+    {
+        name: "Jane Doe",
+        company: "Small Company",
+        quote: "I am so happy with the result!",
+        image: "https://source.unsplash.com/random/200x200",
+    },
+
+];
 
 export const projects = [
     {
@@ -8,31 +22,32 @@ export const projects = [
         subtitle: "MERN Stack",
         description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-        image: "./project-1.gif",
-        link: "https://reactbootcamp.com",
+        image: "./images/project1.png",
+        link: "https://www.austinbowdler.com/",
     },
     {
-        title: "React Tracks",
-        subtitle: "React and Python",
+        title: "React wbsite",
+        subtitle: "MERN Stack",
         description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-        image: "./project-2.gif",
-        link: "https://reedbarger.com",
+        image: "./images/project2.png",
+        link: "https://www.austinbowdler.com/",
     },
     {
-        title: "DevChat",
-        subtitle: "React and Firebase",
+        title: "React wbsite",
+        subtitle: "MERN Stack",
         description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-        image: "./project-3.gif",
-        link: "https://jsbootcamp.com",
+        image: "./images/project3.png",
+        link: "https://www.austinbowdler.com/",
     },
     {
-        title: "Epic Todo App",
-        subtitle: "React Hooks",
+        title: "React wbsite",
+        subtitle: "MERN Stack",
         description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-        image: "./project-4.gif",
-        link: "https://pythonbootcamp.com",
+        image: "./images/project4.png",
+        link: "https://www.austinbowdler.com/",
     },
+
 ];
