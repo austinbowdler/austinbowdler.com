@@ -52,8 +52,8 @@ export default function Contact() {
                             <h2 className="title-font font-semibold text-white tracking-widest text-xs">
                                 EMAIL
                             </h2>
-                            <a href="#" className="text-cyan-400 leading-relaxed">
-                                abowdler2@gmail.com
+                            <a href="mailto:austin@austinbowdler.com" className="text-cyan-400 leading-relaxed">
+                                austin@austinbowdler.com
                             </a>
                             <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
                                 PHONE
