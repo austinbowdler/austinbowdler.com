@@ -18,36 +18,36 @@ export const testimonials = [
 
 export const projects = [
     {
-        title: "React wbsite",
-        subtitle: "MERN Stack",
+        title: "Netflix Clone",
+        subtitle: "Built with React",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
+            "This is a clone of Netflix. It is built with React and is fully responsive. ",
         image: "./images/project1.png",
-        link: "https://www.austinbowdler.com/",
+        link: "https://react-netflix-kohl.vercel.app/",
     },
-    {
-        title: "React wbsite",
-        subtitle: "MERN Stack",
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-        image: "./images/project2.png",
-        link: "https://www.austinbowdler.com/",
-    },
-    {
-        title: "React wbsite",
-        subtitle: "MERN Stack",
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-        image: "./images/project3.png",
-        link: "https://www.austinbowdler.com/",
-    },
-    {
-        title: "React wbsite",
-        subtitle: "MERN Stack",
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
-        image: "./images/project4.png",
-        link: "https://www.austinbowdler.com/",
-    },
+    // {
+    //     title: "React wbsite",
+    //     subtitle: "MERN Stack",
+    //     description:
+    //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
+    //     image: "./images/project2.png",
+    //     link: "https://www.austinbowdler.com/",
+    // },
+    // {
+    //     title: "React wbsite",
+    //     subtitle: "MERN Stack",
+    //     description:
+    //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
+    //     image: "./images/project3.png",
+    //     link: "https://www.austinbowdler.com/",
+    // },
+    // {
+    //     title: "React wbsite",
+    //     subtitle: "MERN Stack",
+    //     description:
+    //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolore rerum laborum iure enim sint nemo omnis voluptate exercitationem eius?",
+    //     image: "./images/project4.png",
+    //     link: "https://www.austinbowdler.com/",
+    // },
 
 ];
