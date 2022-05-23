@@ -21,7 +21,7 @@ export const projects = [
         title: "Netflix Clone",
         subtitle: "Built with React",
         description:
-            "This is a clone of Netflix. It is built with React and is fully responsive. ",
+            "This is a clone of Netflix. It is built with React and is fully responsive. Deployed on Vercel.",
         image: "./images/project1.png",
         link: "https://react-netflix-kohl.vercel.app/",
     },
