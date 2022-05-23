@@ -1,4 +1,4 @@
-export const skills = ["JavaScript", "React", "Vue", "C#", "ASP .NET Core", "SQL", "Flutter", "Python"];
+export const skills = ["JavaScript", "TypeScript", "React", "Vue", "C#", "ASP .NET Core", "Flutter", "Python", "HTML/CSS", "SQL"];
 
 export const testimonials = [
     {
