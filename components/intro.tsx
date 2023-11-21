@@ -1,16 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Intro() {
+  const { ref } = useSectionInView("Home", 0.5);
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0">
+    <section ref={ref} className="mb-28 max-w-[50rem] text-center sm:mb-0">
       <div className="flex items-center justify-center">
         <div className="relative">
           <div>
@@ -61,7 +62,8 @@ export default function Intro() {
       </motion.h1>
 
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4 text-lg font-medium"
+        className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4 text-lg font-medium scroll-mt-[100rem]"
+        id="home"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -76,7 +78,7 @@ export default function Intro() {
           focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition cursor-pointer"
         >
           Contact me here{" "}
-          <BsArrowRight classname="opacity-70 group-hover:translate-x-1 transition" />
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
         <a
@@ -86,7 +88,7 @@ export default function Intro() {
           download="Austin Bowdler Resume"
         >
           Download Resume{" "}
-          <HiDownload classname="opacity-60 group-hover:translate-y-1 transition" />
+          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
 
         <a

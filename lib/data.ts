@@ -35,73 +35,89 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Software Developement Intern",
+    location: "PPOk",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "I interned as a full stack developer learning much about the .NET framework and SQL, while also going to college full time.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2014-2018",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Software Developer I",
+    location: "PPOk",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "I was hired on as a full-time full-stack developer. I worked on a variety of projects and greatly improved my skills in the .NET framework and SQL.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2018-2020",
+  },
+  {
+    title: "Software Developer II",
+    location: "PPOk",
+    description:
+      "I was promoted to Software Developer II. I continued to work on a variety of projects and was given more responsibility. I also began to learn more about the front-end and JavaScript.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "2020 - 2022",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Software Engineer",
+    location: "AlignRx",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "I moved to AlignRx where I continued to work with the .NET framework and SQL as well as helping with a company migration.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2022 - 2023",
+  },
+  {
+    title: "Senior Software Engineer",
+    location: "AlignRx",
+    description:
+      "I am now a Senior Software Engineer at AlignRx. I am currently working to update our stack to use more modern technologies.",
+    icon: React.createElement(FaReact),
+    date: "2023 - present",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Project 1",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "This is a project description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    tags: ["React", "Next.js", "TypeScript", "Tailwind", "SQL"],
     imageUrl: corpcommentImg,
   },
   {
-    title: "rmtDev",
+    title: "Project 2",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "This is a project description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind", "SQL"],
     imageUrl: rmtdevImg,
   },
   {
-    title: "Word Analytics",
+    title: "Project 3",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+      "This is a project description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
     imageUrl: wordanalyticsImg,
   },
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
+  "C#",
+  "ASP.NET",
+  ".NET Core",
+  "WPF",
+  "T-SQL",
+  "JQuery",
+  "Vue",
+  "React",
+  "Angular",
+  "Git",
   "JavaScript",
   "TypeScript",
-  "React",
+  "HTML",
+  "CSS",
   "Next.js",
   "Node.js",
-  "Git",
   "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
+  "Bootstrap",
   "Framer Motion",
 ] as const;
