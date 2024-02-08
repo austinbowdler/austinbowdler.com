@@ -47,7 +47,7 @@ export const experiencesData = [
     location: "PPOk",
     description:
       "I was hired on as a full-time full-stack developer. I worked on a variety of projects and greatly improved my skills in the .NET framework and SQL.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(CgWorkAlt),
     date: "2018-2020",
   },
   {
@@ -63,7 +63,7 @@ export const experiencesData = [
     location: "AlignRx",
     description:
       "I moved to AlignRx where I continued to work with the .NET framework and SQL as well as helping with a company migration.",
-    icon: React.createElement(FaReact),
+    icon: React.createElement(CgWorkAlt),
     date: "2022 - 2023",
   },
   {
