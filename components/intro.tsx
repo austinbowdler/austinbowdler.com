@@ -89,7 +89,7 @@ export default function Intro() {
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none 
-          focus:scale-110 hover:scale-110  active:scale-105 transition cursor-pointer borderBlack"
+          focus:scale-110 hover:scale-110  active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
           href="/resume.pdf"
           download="Austin Bowdler Resume"
         >
@@ -98,7 +98,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack"
+          className="bg-white dark:bg-white/10 text-gray-700 dark:text-white/60 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack"
           href="https://www.linkedin.com/in/austinbowdler/"
           target="_blank"
         >
@@ -106,7 +106,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="bg-white text-gray-700 p-4 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:text-gray-950 hover:scale-[1.15]  active:scale-105 transition cursor-pointer borderBlack"
+          className="bg-white dark:bg-white/10 text-gray-700 dark:text-white/60 p-4 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:text-gray-950 hover:scale-[1.15]  active:scale-105 transition cursor-pointer borderBlack"
           href="https://github.com/austinbowdler"
           target="_blank"
         >
