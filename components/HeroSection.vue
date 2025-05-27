@@ -8,10 +8,7 @@
         <div class="text-center space-y-4">
             <h1 class="text-5xl font-extrabold">Austin Bowdler</h1>
             <p class="text-xl">Web Software Developer & Designer</p>
-            <a href="#projects"
-                class="inline-block mt-6 px-8 py-3 bg-white text-blue-900 font-semibold rounded-full hover:bg-gray-100">
-                See My Work
-            </a>
+
         </div>
     </section>
 </template>
