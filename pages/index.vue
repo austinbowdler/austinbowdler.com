@@ -23,6 +23,9 @@ const skills = [
     { name: 'CSS3', icon: faCss3, color: '#1572B6' }
 ]
 
+// Theme switcher component
+import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
+
 // Smooth scrolling handler that accounts for the sticky header height.
 let _scrollAnimId: number | null = null
 function cancelScrollAnim() {
@@ -113,16 +116,21 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="min-h-screen bg-gradient-to-b from-white to-brand-50 text-slate-900">
+    <div
+        class="min-h-screen bg-gradient-to-b from-white to-brand-50 dark:from-slate-900 dark:to-slate-800 text-slate-900 dark:text-slate-100">
         <!-- Nav -->
-        <header class="sticky top-0 z-40 backdrop-blur bg-white/60 border-b border-slate-200/60">
+        <header
+            class="sticky top-0 z-40 backdrop-blur bg-white/60 dark:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-700/40">
             <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
                 <a href="#" class="font-bold">austin<span class="text-brand-500">bowdler</span></a>
-                <ul class="flex gap-6 text-sm">
-                    <li><a href="#about" class="hover:text-brand-600">About</a></li>
-                    <li><a href="#projects" class="hover:text-brand-600">Projects</a></li>
-                    <li><a href="#contact" class="hover:text-brand-600">Contact</a></li>
-                </ul>
+                <div class="flex items-center gap-6">
+                    <ul class="flex gap-6 text-sm">
+                        <li><a href="#about" class="hover:text-brand-600 dark:hover:text-brand-300">About</a></li>
+                        <li><a href="#projects" class="hover:text-brand-600 dark:hover:text-brand-300">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-300">Contact</a></li>
+                    </ul>
+                    <ThemeSwitcher />
+                </div>
             </nav>
         </header>
 
@@ -155,7 +163,8 @@ onMounted(() => {
                             class="absolute inset-0 w-full h-full object-cover rounded-3xl shadow-glass" />
                     </div>
 
-                    <div class="absolute -bottom-6 -left-6 w-28 h-28 rounded-3xl bg-brand-200 blur-2xl opacity-70" />
+                    <div
+                        class="absolute -bottom-6 -left-6 w-28 h-28 rounded-3xl bg-brand-200 blur-2xl opacity-70 dark:opacity-0 dark:blur-none" />
                 </div>
             </div>
         </section>
@@ -190,7 +199,7 @@ onMounted(() => {
 
         <!-- Contact -->
         <section id="contact" class="mx-auto max-w-6xl px-4 py-16">
-            <div class="rounded-3xl p-8 bg-white/70 border border-slate-200 shadow-glass"
+            <div class="rounded-3xl p-8 bg-white/70 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-glass"
                 v-motion="{ initial: { opacity: 0, y: 20 }, enter: { opacity: 1, y: 0, delay: 0.1 } }">
                 <h2 class="text-2xl font-bold">Contact</h2>
                 <p class="mt-3 text-slate-700">Open to chat about freelance, collaborations, or fun ideas.</p>

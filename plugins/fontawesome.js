@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faVuejs, faJsSquare, faReact, faWindows, faHtml5, faCss3, faPython, faMicrosoft } from '@fortawesome/free-brands-svg-icons'
 
 // Solid icons
-import { faCode, faDatabase, faDesktop } from '@fortawesome/free-solid-svg-icons'
+import { faCode, faDatabase, faDesktop, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 
 // Add them all to the Font Awesome library
 library.add(
@@ -21,6 +21,9 @@ library.add(
     faCode,
     faDatabase,
     faDesktop
+    ,
+    faSun,
+    faMoon
 )
 
 // Register FontAwesomeIcon as a global component
