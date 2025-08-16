@@ -4,16 +4,16 @@ const { data: projects } = await useFetch('/api/projects')
 const year = new Date().getFullYear()
 
 const skills = [
-    { name: 'C#', icon: '/icons/csharp.svg' },
-    { name: 'Vue.js', icon: '/icons/vue-dot-js.svg' },
-    { name: 'React', icon: '/icons/react.svg' },
-    { name: 'JavaScript', icon: '/icons/javascript.svg' },
-    { name: 'jQuery', icon: '/icons/jquery.svg' },
-    { name: 'T-SQL', icon: '/icons/microsoftsqlserver.svg' },
-    { name: 'Python', icon: '/icons/python.svg' },
-    { name: 'WPF', icon: '/icons/windows.svg' },
-    { name: 'HTML5', icon: '/icons/html5.svg' },
-    { name: 'CSS3', icon: '/icons/css3.svg' }
+    { name: 'C#', icon: 'si:csharp' },
+    { name: 'Vue.js', icon: 'si:vue-dot-js' },
+    { name: 'React', icon: 'si:react' },
+    { name: 'JavaScript', icon: 'si:javascript' },
+    { name: 'jQuery', icon: 'si:jquery' },
+    { name: 'T-SQL', icon: 'si:microsoftsqlserver' },
+    { name: 'Python', icon: 'si:python' },
+    { name: 'WPF', icon: 'si:windows' },
+    { name: 'HTML5', icon: 'si:html5' },
+    { name: 'CSS3', icon: 'si:css3' }
 ]
 </script>
 
