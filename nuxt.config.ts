@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 		// move module options into the tuple to avoid an unknown top-level `image` key
 		['@nuxt/image-edge', { format: ['webp', 'avif'] }],
 		'@vueuse/motion/nuxt',
-		['unplugin-icons/nuxt', { autoInstall: true }],
+		// Using Font Awesome via plugin; removed unplugin-icons
 	],
 	app: {
 		head: {

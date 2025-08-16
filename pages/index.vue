@@ -3,17 +3,22 @@ import { useFetch } from 'nuxt/app';
 const { data: projects } = await useFetch('/api/projects')
 const year = new Date().getFullYear()
 
+// Font Awesome icons are registered globally in `plugins/fontawesome.js`.
+// Here we provide the icon references used by the `font-awesome-icon` component.
+import { faCode, faDatabase, faDesktop } from '@fortawesome/free-solid-svg-icons'
+import { faVuejs, faJsSquare, faReact, faWindows, faHtml5, faCss3, faPython, faMicrosoft } from '@fortawesome/free-brands-svg-icons'
+
 const skills = [
-    { name: 'C#', icon: 'si:csharp' },
-    { name: 'Vue.js', icon: 'si:vue-dot-js' },
-    { name: 'React', icon: 'si:react' },
-    { name: 'JavaScript', icon: 'si:javascript' },
-    { name: 'jQuery', icon: 'si:jquery' },
-    { name: 'T-SQL', icon: 'si:microsoftsqlserver' },
-    { name: 'Python', icon: 'si:python' },
-    { name: 'WPF', icon: 'si:windows' },
-    { name: 'HTML5', icon: 'si:html5' },
-    { name: 'CSS3', icon: 'si:css3' }
+    { name: 'C#', icon: faWindows },
+    { name: 'Vue.js', icon: faVuejs },
+    { name: 'React', icon: faReact },
+    { name: 'JavaScript', icon: faJsSquare },
+    { name: 'jQuery', icon: faJsSquare },
+    { name: 'T-SQL', icon: faDatabase },
+    { name: 'Python', icon: faPython },
+    { name: 'WPF', icon: faMicrosoft },
+    { name: 'HTML5', icon: faHtml5 },
+    { name: 'CSS3', icon: faCss3 }
 ]
 </script>
 
