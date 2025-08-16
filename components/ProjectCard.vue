@@ -26,9 +26,9 @@ defineProps<{
             </div>
             <div class="mt-4 flex gap-3">
                 <a v-if="project.url" :href="project.url" target="_blank"
-                    class="text-sm underline underline-offset-4">Live</a>
-                <a v-if="project.repo" :href="project.repo" target="_blank"
-                    class="text-sm underline underline-offset-4">Code</a>
+                    class="text-sm underline underline-offset-4">Check it out</a>
+                <!-- <a v-if="project.repo" :href="project.repo" target="_blank"
+                    class="text-sm underline underline-offset-4">Code</a> -->
             </div>
         </div>
     </article>

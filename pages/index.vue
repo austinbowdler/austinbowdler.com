@@ -76,7 +76,6 @@ const skills = [
         <section id="skills" class="mx-auto max-w-6xl px-4 py-16">
             <div class="flex items-end justify-between">
                 <h2 class="text-2xl font-bold">Skills</h2>
-                <span class="text-sm text-slate-500">at a glance</span>
             </div>
             <SkillsGrid class="mt-8" :skills="skills" />
         </section>

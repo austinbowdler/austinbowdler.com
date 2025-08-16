@@ -14,9 +14,8 @@ export default <Project[]>[
 		description:
 			'Internal tools for pharmacies: data pipelines, dashboards, and workflow automation.',
 		year: 2025,
-		tags: ['Vue 3', 'C#', 'SQL', 'Bootstrap'],
-		url: 'https://example.com',
-		repo: 'https://github.com/austinbowdler',
+		tags: ['Vue 3', 'C#', 'SQL', 'jQuery'],
+		url: 'https://alignrx.org',
 		cover: '/images/alignrx.jpg',
 	},
 	// add more…
