@@ -3,7 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // Brand icons
-import { faVuejs, faJsSquare, faReact, faWindows, faHtml5, faCss3 } from '@fortawesome/free-brands-svg-icons'
+import { faVuejs, faJsSquare, faReact, faWindows, faHtml5, faCss3, faPython, faMicrosoft } from '@fortawesome/free-brands-svg-icons'
 
 // Solid icons
 import { faCode, faDatabase, faDesktop } from '@fortawesome/free-solid-svg-icons'
@@ -16,6 +16,8 @@ library.add(
     faWindows,
     faHtml5,
     faCss3,
+    faPython,
+    faMicrosoft,
     faCode,
     faDatabase,
     faDesktop

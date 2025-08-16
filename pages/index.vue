@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted, onBeforeUnmount } from 'vue';
 import { useFetch } from 'nuxt/app';
 const { data: projects } = await useFetch('/api/projects')
 const year = new Date().getFullYear()
@@ -9,17 +10,106 @@ import { faCode, faDatabase, faDesktop } from '@fortawesome/free-solid-svg-icons
 import { faVuejs, faJsSquare, faReact, faWindows, faHtml5, faCss3, faPython, faMicrosoft } from '@fortawesome/free-brands-svg-icons'
 
 const skills = [
-    { name: 'C#', icon: faWindows },
-    { name: 'Vue.js', icon: faVuejs },
-    { name: 'React', icon: faReact },
-    { name: 'JavaScript', icon: faJsSquare },
-    { name: 'jQuery', icon: faJsSquare },
-    { name: 'T-SQL', icon: faDatabase },
-    { name: 'Python', icon: faPython },
-    { name: 'WPF', icon: faMicrosoft },
-    { name: 'HTML5', icon: faHtml5 },
-    { name: 'CSS3', icon: faCss3 }
+    // Using representative brand colors
+    { name: 'C#', icon: faWindows, color: '#0078D6' }, // Microsoft blue
+    { name: 'Vue.js', icon: faVuejs, color: '#42B883' },
+    { name: 'React', icon: faReact, color: '#61DAFB' },
+    { name: 'JavaScript', icon: faJsSquare, color: '#F7DF1E' },
+    { name: 'jQuery', icon: faJsSquare, color: '#0769AD' },
+    { name: 'T-SQL', icon: faDatabase, color: '#4479A1' },
+    { name: 'Python', icon: faPython, color: '#3776AB' },
+    { name: 'WPF', icon: faMicrosoft, color: '#7375C8' },
+    { name: 'HTML5', icon: faHtml5, color: '#E34F26' },
+    { name: 'CSS3', icon: faCss3, color: '#1572B6' }
 ]
+
+// Smooth scrolling handler that accounts for the sticky header height.
+let _scrollAnimId: number | null = null
+function cancelScrollAnim() {
+    if (_scrollAnimId !== null) {
+        cancelAnimationFrame(_scrollAnimId)
+        _scrollAnimId = null
+    }
+}
+
+function animateWindowScrollTo(targetY: number, duration = 450) {
+    cancelScrollAnim()
+    const startY = window.scrollY || window.pageYOffset
+    const diff = targetY - startY
+    if (Math.abs(diff) < 1) return
+    const startTime = performance.now()
+
+    const ease = (t: number) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+
+    function step(now: number) {
+        const elapsed = now - startTime
+        const p = Math.min(1, elapsed / duration)
+        const eased = ease(p)
+        window.scrollTo(0, Math.round(startY + diff * eased))
+        if (p < 1) {
+            _scrollAnimId = requestAnimationFrame(step)
+        } else {
+            _scrollAnimId = null
+        }
+    }
+
+    _scrollAnimId = requestAnimationFrame(step)
+}
+
+function animateScrollToHash(hash: string) {
+    if (!hash || hash === '#') {
+        animateWindowScrollTo(0)
+        return
+    }
+
+    const id = hash.replace('#', '')
+    const targetEl = document.getElementById(id)
+    if (!targetEl) return
+
+    const header = document.querySelector('header')
+    const headerHeight = header ? (header as HTMLElement).offsetHeight : 0
+    const rectTop = targetEl.getBoundingClientRect().top + window.scrollY
+    const offset = 12 // small gap under the header
+    const targetY = Math.max(rectTop - headerHeight - offset, 0)
+
+    animateWindowScrollTo(targetY)
+}
+
+onMounted(() => {
+    // Delegated click handler: catches anchors added later and prevents missed events.
+    const clickHandler = (ev: MouseEvent) => {
+        const target = (ev.target as Element)?.closest ? (ev.target as Element).closest('a') as HTMLAnchorElement | null : null
+        if (!target) return
+        const href = target.getAttribute('href')
+        if (!href || !href.startsWith('#')) return
+
+        // Allow modified clicks to open in new tab / copy link etc.
+        if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return
+
+        ev.preventDefault()
+        animateScrollToHash(href)
+        history.pushState(null, '', href)
+    }
+
+    document.addEventListener('click', clickHandler)
+
+    // Handle back/forward navigation to hashes
+    const popHandler = () => animateScrollToHash(location.hash)
+    window.addEventListener('popstate', popHandler)
+
+    // If the page loaded with a hash, animate to it after layout settles.
+    if (location.hash) {
+        // small timeout to allow images/fonts/layout to finish
+        setTimeout(() => animateScrollToHash(location.hash), 50)
+    }
+
+    // Cleanup when component unmounts
+    onBeforeUnmount(() => {
+        document.removeEventListener('click', clickHandler)
+        window.removeEventListener('popstate', popHandler)
+        cancelScrollAnim()
+    })
+})
 </script>
 
 <template>
@@ -27,7 +117,7 @@ const skills = [
         <!-- Nav -->
         <header class="sticky top-0 z-40 backdrop-blur bg-white/60 border-b border-slate-200/60">
             <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-                <a href="#" class="font-bold">austin<span class="text-brand-500">bowdler</span>.com</a>
+                <a href="#" class="font-bold">austin<span class="text-brand-500">bowdler</span></a>
                 <ul class="flex gap-6 text-sm">
                     <li><a href="#about" class="hover:text-brand-600">About</a></li>
                     <li><a href="#projects" class="hover:text-brand-600">Projects</a></li>
@@ -58,8 +148,13 @@ const skills = [
                             touch</a>
                     </div>
                 </div>
-                <div class="relative">
-                    <NuxtImg src="/images/austinbowdler.jpg" alt="Austin working" class="rounded-3xl shadow-glass" />
+                <div class="relative w-56 sm:w-72 md:w-full max-w-[420px] mx-auto md:mx-0">
+                    <!-- Square aspect container: uses padding-top to lock 1:1 ratio so the image always stays square -->
+                    <div class="relative" style="padding-top:100%">
+                        <NuxtImg src="/images/austinbowdler.jpg" alt="Austin Bowdler"
+                            class="absolute inset-0 w-full h-full object-cover rounded-3xl shadow-glass" />
+                    </div>
+
                     <div class="absolute -bottom-6 -left-6 w-28 h-28 rounded-3xl bg-brand-200 blur-2xl opacity-70" />
                 </div>
             </div>
@@ -101,7 +196,8 @@ const skills = [
                 <p class="mt-3 text-slate-700">Open to chat about freelance, collaborations, or fun ideas.</p>
                 <div class="mt-6 flex gap-4">
                     <a href="mailto:austin@austinbowdler.com"
-                        class="px-5 py-3 rounded-2xl bg-slate-900 text-white">Email me</a>
+                        class="px-5 py-3 rounded-2xl bg-brand-500 text-white shadow-glass hover:bg-brand-600 transition">Email
+                        me</a>
                     <a href="https://github.com/austinbowdler" target="_blank"
                         class="px-5 py-3 rounded-2xl border">GitHub</a>
                 </div>

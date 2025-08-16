@@ -5,16 +5,17 @@ export default {
         extend: {
             colors: {
                 brand: {
-                    50: '#eef7ff',
-                    100: '#d9edff',
-                    200: '#b6dbff',
-                    300: '#86c2ff',
-                    400: '#4fa1ff',
-                    500: '#2f86ff',     // primary blue (fun but professional)
-                    600: '#2267d6',
-                    700: '#1e53ab',
-                    800: '#1f4989',
-                    900: '#1e3e6e'
+                    // Updated brand scale centered on #438ca4
+                    50: '#f3f8f9',
+                    100: '#e6f1f3',
+                    200: '#cfe3e8',
+                    300: '#9fcbd3',
+                    400: '#66aebf',
+                    500: '#438ca4', // new primary brand blue
+                    600: '#377686',
+                    700: '#2b5d66',
+                    800: '#234952',
+                    900: '#18363e'
                 }
             },
             boxShadow: {
