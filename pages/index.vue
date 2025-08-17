@@ -126,6 +126,9 @@ onMounted(() => {
                 <div class="flex items-center gap-6">
                     <ul class="flex gap-6 text-sm">
                         <li><a href="#about" class="hover:text-brand-600 dark:hover:text-brand-300">About</a></li>
+                        <li><a href="#skills" class="hover:text-brand-600 dark:hover:text-brand-300">Skills</a></li>
+                        <li><a href="#experience" class="hover:text-brand-600 dark:hover:text-brand-300">Experience</a>
+                        </li>
                         <li><a href="#projects" class="hover:text-brand-600 dark:hover:text-brand-300">Projects</a></li>
                         <li><a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-300">Contact</a></li>
                     </ul>
@@ -188,7 +191,11 @@ onMounted(() => {
             </div>
             <SkillsGrid class="mt-8" :skills="skills" />
         </section>
-
+        <!-- Experience -->
+        <section id="experience" class="mx-auto max-w-6xl px-4 py-16">
+            <h2 class="text-2xl font-bold">Experience</h2>
+            <ExperienceTimeline class="mt-8" />
+        </section>
         <!-- Projects -->
         <section id="projects" class="mx-auto max-w-6xl px-4 py-16">
             <h2 class="text-2xl font-bold">Projects</h2>
