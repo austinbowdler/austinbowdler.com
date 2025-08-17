@@ -33,6 +33,9 @@ export default defineNuxtConfig({
 					rel: 'stylesheet',
 					href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap',
 				},
+				// custom favicon (SVG) with ICO fallback for older browsers
+				{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+				{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 			],
 		},
 	},
