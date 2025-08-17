@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount } from 'vue';
+import { onMounted, onBeforeUnmount, ref } from 'vue';
 import { useFetch } from 'nuxt/app';
 const { data: projects } = await useFetch('/api/projects')
 const year = new Date().getFullYear()
@@ -113,6 +113,15 @@ onMounted(() => {
         cancelScrollAnim()
     })
 })
+
+// Mobile menu state
+const isMenuOpen = ref(false)
+function toggleMenu() {
+    isMenuOpen.value = !isMenuOpen.value
+}
+function closeMenu() {
+    isMenuOpen.value = false
+}
 </script>
 
 <template>
@@ -123,7 +132,9 @@ onMounted(() => {
             class="sticky top-0 z-40 backdrop-blur bg-white/60 dark:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-700/40">
             <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
                 <a href="#" class="font-bold">austin<span class="text-brand-500">bowdler</span></a>
-                <div class="flex items-center gap-6">
+
+                <!-- Desktop links -->
+                <div class="hidden sm:flex items-center gap-6">
                     <ul class="flex gap-6 text-sm">
                         <li><a href="#about" class="hover:text-brand-600 dark:hover:text-brand-300">About</a></li>
                         <li><a href="#skills" class="hover:text-brand-600 dark:hover:text-brand-300">Skills</a></li>
@@ -134,7 +145,36 @@ onMounted(() => {
                     </ul>
                     <ThemeSwitcher />
                 </div>
+
+                <!-- Mobile controls -->
+                <div class="flex items-center gap-4 sm:hidden">
+                    <ThemeSwitcher />
+                    <button @click="toggleMenu" aria-label="Toggle menu"
+                        class="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
             </nav>
+
+            <!-- Mobile menu panel -->
+            <div v-if="isMenuOpen" class="sm:hidden mx-auto max-w-6xl px-4">
+                <div class="flex flex-col gap-3 py-3">
+                    <a @click="closeMenu" href="#about" class="py-2">About</a>
+                    <a @click="closeMenu" href="#skills" class="py-2">Skills</a>
+                    <a @click="closeMenu" href="#experience" class="py-2">Experience</a>
+                    <a @click="closeMenu" href="#projects" class="py-2">Projects</a>
+                    <a @click="closeMenu" href="#contact" class="py-2">Contact</a>
+                </div>
+            </div>
         </header>
 
         <!-- Hero -->
