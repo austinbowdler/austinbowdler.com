@@ -202,7 +202,7 @@ function closeMenu() {
                 <div class="relative w-56 sm:w-72 md:w-full max-w-[420px] mx-auto md:mx-0">
                     <!-- Square aspect container: uses padding-top to lock 1:1 ratio so the image always stays square -->
                     <div class="relative" style="padding-top:100%">
-                        <NuxtImg src="/images/austinbowdler.jpg" alt="Austin Bowdler"
+                        <NuxtImg src="/images/austinbowdler.png" alt="Austin Bowdler"
                             class="absolute inset-0 w-full h-full object-cover rounded-3xl shadow-glass" />
                     </div>
 
