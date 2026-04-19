@@ -7,6 +7,7 @@
 		"dev": "nuxt dev",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview",
+		"favicon": "node scripts/build-favicon-ico.mjs",
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
