@@ -7,7 +7,7 @@ const props = withDefaults(defineProps<{
     eraseSpeed?: number
     pause?: number
 }>(), {
-    roles: () => ['Software Development Manager', 'Full-Stack Engineer', 'Vue + .NET Specialist', 'Problem Solver'],
+    roles: () => ['Director of Software Development', 'Full-Stack Engineer', 'Vue + .NET Specialist', 'Problem Solver'],
     typeSpeed: 70,
     eraseSpeed: 35,
     pause: 1400

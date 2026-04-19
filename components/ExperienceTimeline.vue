@@ -10,7 +10,7 @@ const experiences: Experience[] = [
         location: 'Edmond, OK',
         roles: [
             {
-                title: 'Software Development Manager',
+                title: 'Director of Software Development',
                 dates: '08/2024 – Present',
                 bullets: [
                     'Managing development teams delivering business-critical pharmacy tools.',

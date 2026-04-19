@@ -33,5 +33,20 @@ export default <Project[]>[
 		],
 		featured: true,
 	},
+	{
+		title: 'Backlog Saga',
+		description:
+			'Track, rate, and share your gaming journey across all platforms. A backlog manager that helps gamers stop drowning in games and actually start playing them.',
+		year: 2026,
+		tags: ['Nuxt 3', 'Vue', 'Pinia', 'Supabase', 'Tailwind'],
+		url: 'https://backlogsaga.com',
+		cover: '/images/backlogsaga.png',
+		highlights: [
+			'Cross-platform game tracking with ratings and personal lists.',
+			'Trending games surfaced from aggregated community activity.',
+			'Built on Nuxt 3 with Supabase-backed auth and data.',
+		],
+		featured: true,
+	},
 	// ——— Add more projects below. Copy the block above as a template. ———
 ];

@@ -197,9 +197,9 @@ onMounted(() => {
                     </p>
 
                     <p class="mt-5 text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
-                        Engineering manager & full-stack developer crafting performant, maintainable
-                        apps with Vue, C#, and SQL — with an eye for the details that make interfaces
-                        feel great to use.
+                        Full-stack developer crafting performant, maintainable apps with Vue, C#,
+                        and SQL — with an eye for the details that make interfaces feel great to
+                        use.
                     </p>
 
                     <div class="mt-8 flex flex-wrap gap-3">
