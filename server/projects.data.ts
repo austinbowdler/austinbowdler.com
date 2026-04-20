@@ -5,9 +5,10 @@ export type Project = {
 	tags: string[];
 	url?: string;
 	repo?: string;
-	cover: string; // path under /public or remote URL
+	cover?: string; // path under /public or remote URL
 	highlights?: string[];
 	featured?: boolean;
+	comingSoon?: boolean;
 };
 
 /**
@@ -47,6 +48,14 @@ export default <Project[]>[
 			'Built on Nuxt 3 with Supabase-backed auth and data.',
 		],
 		featured: true,
+	},
+	{
+		title: 'Something new',
+		description:
+			'A new side project is in the works — experimenting with ideas at the intersection of gaming, tooling, and thoughtful UX. Check back soon.',
+		year: 2026,
+		tags: ['In progress'],
+		comingSoon: true,
 	},
 	// ——— Add more projects below. Copy the block above as a template. ———
 ];

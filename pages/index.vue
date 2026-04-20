@@ -237,9 +237,9 @@ onMounted(() => {
                             <img :src="`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg`"
                                 alt="SQL" />
                         </div>
-                        <div class="float-badge badge-4" :title="'TypeScript'">
-                            <img :src="`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg`"
-                                alt="TypeScript" />
+                        <div class="float-badge badge-4" :title="'.NET'">
+                            <img :src="`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg`"
+                                alt=".NET" />
                         </div>
                     </div>
                 </div>
@@ -261,13 +261,27 @@ onMounted(() => {
         <section id="about" class="mx-auto max-w-6xl px-4 py-20">
             <div v-motion="{ initial: { opacity: 0, y: 20 }, visibleOnce: { opacity: 1, y: 0 } }">
                 <h2 class="section-heading">About</h2>
-                <p class="mt-5 text-slate-700 dark:text-slate-300 leading-relaxed text-lg max-w-3xl">
-                    Technology professional and self-starter focused on problem solving and
-                    building enterprise-level software in direct support of business objectives.
-                    My career has been defined by increasing responsibility across application
-                    design, systems analysis, and development — and by a deep love for shipping
-                    polished, reliable product.
-                </p>
+                <div class="mt-5 space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed text-lg max-w-3xl">
+                    <p>
+                        I'm a developer who's happiest when something clicks — a sluggish query
+                        that suddenly flies, a UI that finally <em>feels</em> right, a tangle of
+                        business logic that collapses into a handful of clean functions. That's
+                        been the throughline of the last decade for me: finding the satisfying
+                        version of the problem.
+                    </p>
+                    <p>
+                        Most of what I build lives inside pharmacies and back offices — not
+                        flashy, but it has to be right. I care about details other people might
+                        not notice: a keyboard shortcut that saves ten seconds, a loading state
+                        that doesn't jank, an error message that actually helps. Good software
+                        respects the person using it.
+                    </p>
+                    <p>
+                        Off the clock I'm usually chipping away at a gaming backlog I'll never
+                        finish, tinkering with whatever framework I've been meaning to try, or
+                        over-engineering small side projects for fun.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -311,13 +325,24 @@ onMounted(() => {
                             Open to chat about freelance work, collaborations, or fun ideas.
                         </p>
                     </div>
-                    <div class="flex flex-wrap gap-3 md:justify-end items-start">
-                        <a href="mailto:austin@austinbowdler.com" class="btn-primary">
-                            Email me
-                        </a>
-                        <a href="https://github.com/austinbowdler" target="_blank" rel="noopener" class="btn-ghost">
-                            GitHub
-                        </a>
+                    <div class="flex flex-col md:items-end gap-3">
+                        <div class="flex flex-wrap gap-3 md:justify-end items-start">
+                            <a href="mailto:austin@austinbowdler.com" class="btn-primary">
+                                Email me
+                            </a>
+                            <a href="https://www.linkedin.com/in/austinbowdler/" target="_blank" rel="noopener"
+                                class="btn-ghost">
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/austinbowdler" target="_blank" rel="noopener"
+                                class="btn-ghost">
+                                GitHub
+                            </a>
+                        </div>
+                        <p class="github-hint">
+                            Most of my day-to-day work lives in private repos — GitHub is where
+                            the side projects and experiments land.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -720,6 +745,19 @@ body {
     align-items: center;
 }
 
+.github-hint {
+    font-size: 0.8rem;
+    color: rgb(100 116 139);
+    max-width: 22rem;
+    line-height: 1.45;
+}
+
+@media (min-width: 768px) {
+    .github-hint {
+        text-align: right;
+    }
+}
+
 @media (min-width: 768px) {
     .contact-grid {
         grid-template-columns: 1.3fr 1fr;
@@ -761,5 +799,9 @@ html.dark .section-sub {
 html.dark .contact-card {
     background: rgba(30, 41, 59, 0.65);
     border-color: rgba(148, 163, 184, 0.15);
+}
+
+html.dark .github-hint {
+    color: rgb(148 163 184);
 }
 </style>

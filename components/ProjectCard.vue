@@ -7,9 +7,10 @@ const props = defineProps<{
         tags: string[]
         url?: string
         repo?: string
-        cover: string
+        cover?: string
         highlights?: string[]
         featured?: boolean
+        comingSoon?: boolean
     }
 }>()
 
@@ -47,9 +48,22 @@ function tagStyle(tag: string) {
         <div class="project-border" />
         <div class="project-inner">
             <div class="cover-wrap">
-                <NuxtImg :src="project.cover" :alt="project.title" class="cover" loading="lazy" />
-                <div class="cover-fade" />
-                <span v-if="project.featured" class="featured-badge">★ Featured</span>
+                <template v-if="project.comingSoon">
+                    <div class="cover cover-placeholder">
+                        <svg class="placeholder-icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 2" />
+                        </svg>
+                    </div>
+                    <span class="soon-badge">Coming soon</span>
+                </template>
+                <template v-else>
+                    <NuxtImg :src="project.cover" :alt="project.title" class="cover" loading="lazy" />
+                    <div class="cover-fade" />
+                    <span v-if="project.featured" class="featured-badge">★ Featured</span>
+                </template>
             </div>
             <div class="p-5">
                 <div class="flex items-start justify-between gap-3">
@@ -152,6 +166,50 @@ function tagStyle(tag: string) {
     box-shadow: 0 4px 16px rgba(67, 140, 164, 0.45);
 }
 
+.cover-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(159, 203, 211, 0.35), transparent 55%),
+        radial-gradient(circle at 75% 80%, rgba(67, 140, 164, 0.3), transparent 60%),
+        linear-gradient(135deg, rgba(102, 174, 191, 0.18), rgba(148, 163, 184, 0.12));
+    color: #438ca4;
+}
+
+.placeholder-icon {
+    opacity: 0.7;
+    animation: soon-pulse 3.2s ease-in-out infinite;
+}
+
+@keyframes soon-pulse {
+
+    0%,
+    100% {
+        opacity: 0.55;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+}
+
+.soon-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #2b5d66;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(102, 174, 191, 0.4);
+    backdrop-filter: blur(6px);
+}
+
 .title {
     font-weight: 700;
     font-size: 1.125rem;
@@ -220,5 +278,19 @@ html.dark .link {
 
 html.dark .link:hover {
     color: #cfe3e8;
+}
+
+html.dark .cover-placeholder {
+    color: #9fcbd3;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(159, 203, 211, 0.25), transparent 55%),
+        radial-gradient(circle at 75% 80%, rgba(67, 140, 164, 0.22), transparent 60%),
+        linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.6));
+}
+
+html.dark .soon-badge {
+    color: #cfe3e8;
+    background: rgba(30, 41, 59, 0.75);
+    border-color: rgba(159, 203, 211, 0.3);
 }
 </style>
