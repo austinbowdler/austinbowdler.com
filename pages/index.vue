@@ -173,7 +173,7 @@ onMounted(() => {
         </header>
 
         <!-- Hero -->
-        <section class="mx-auto max-w-6xl px-4 py-16 md:py-24" id="top">
+        <section class="mx-auto max-w-6xl px-4 py-16 md:py-24 overflow-x-clip" id="top">
             <div class="grid md:grid-cols-[1.1fr_1fr] gap-12 items-center">
                 <div
                     v-motion="{ initial: { opacity: 0, y: 22 }, enter: { opacity: 1, y: 0, transition: { duration: 0.7 } } }">
