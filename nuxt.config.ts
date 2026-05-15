@@ -18,7 +18,7 @@ export default defineNuxtConfig({
 					content:
 						'Web software developer & designer. Selected projects and contact.',
 				},
-				{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+				{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
 				{ property: 'og:title', content: 'Austin Bowdler — Portfolio' },
 				{ property: 'og:type', content: 'website' },
 			],
